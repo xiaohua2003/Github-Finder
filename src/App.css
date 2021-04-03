@@ -12,3 +12,29 @@ body {
   align-items: center;
   padding: 0.7rem 2rem;
 }
+
+.personal_image {
+  border-radius: 50%;
+  width: 70px;
+}
+.card {
+  text-align: center;
+  padding: 1rem;
+  border: #ccc 1px solid;
+  margin: 1rem 0;
+}
+.btn {
+  background: #393146;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.4rem 1.3rem;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn:hover {
+  background-color: #555555;
+  color: white;
+}
