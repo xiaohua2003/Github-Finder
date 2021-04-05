@@ -1,5 +1,5 @@
 import React from 'react'
-import propTypes from "prop-types";
+
  const UserItem=({user:{login, avatar_url, html_url}})=>  {
     
     
