@@ -5,7 +5,9 @@ export class Search extends Component {
         text:''
     };
     static propTypes={
-       searchUsers:propTypes.func.isRequired
+       searchUsers:propTypes.func.isRequired,
+       clearUsers: propTypes.func.isRequired,
+       showClear:propTypes.bool.isRequired
     }
     onSubmit=e=> {
         e.preventDefault();
@@ -24,8 +26,9 @@ export class Search extends Component {
                  <h5>Check out profile by entering a username!!!</h5>
                 <form className="form" onSubmit={this.onSubmit}>
                     <input type="text" placeholder="Search Users" name="text" size="30" value={this.state.text} onChange={this.onChange}/>
-                     <input type="submit" className='submit' value="Search"/>
-                </form>
+                     <input type="submit" className='submit' value="Search"/> 
+                     {this.props.showClear&&<button className="btn_clear" onClick={this.props.clearUsers}>Clear</button>}
+               </form>
             </div>
         )
     }

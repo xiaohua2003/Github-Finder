@@ -30,7 +30,21 @@ h2 {
 h5 {
   font-size: 1.2rem;
   text-align: center;
-  color: grey;
+  color: #91c788;
+}
+.submit {
+  color: white;
+  border-style: none;
+  padding: 0.2rem 0.4rem;
+  margin-left: 1rem;
+  background-color: black;
+}
+.btn_clear {
+  background-color: #dddddd;
+  color: BLACK;
+  border-style: none;
+  padding: 0.2rem 0.6rem;
+  margin-left: 1rem;
 }
 /*container*/
 .personal_image {
@@ -64,7 +78,7 @@ h5 {
 }
 /*footer*/
 .footer {
-  background-color: #61b15a;
+  background-color: #29bb72;
   margin-bottom: 0px;
   padding: 0.5rem;
   margin-top: 3.4rem;
