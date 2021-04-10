@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from "prop-types";
+import {Link} from "react-router-dom";
 const Navbar =(props)=>{
     
    
@@ -7,6 +8,10 @@ const Navbar =(props)=>{
             <nav className="navbar bg-primary">
                 
                <h1><i className={props.icon}></i>{props.title} </h1> 
+               <ul>
+                   <li><Link to="/" className="navbar-right" >Home</Link></li>
+                   <li><Link to="/about" className="navbar-right" >About</Link></li>
+               </ul>
                
             </nav>
         )
