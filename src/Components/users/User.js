@@ -1,28 +1,26 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, Fragment,useContext } from 'react';
 import Spinner from "../layOut/Spinner";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
-const User=({User,loading,getUser,getRepos, repos,match})=>{
+import GithubContext from "../../context/github/githubContext";
+const User=({ repos,match})=>{
+    const githubContext=useContext(GithubContext);
+    const {getUser, loading,User}=githubContext;
     useEffect(()=>{
-        getUser(match.params.login);
-       
-      
+        getUser(match.params.login); 
     },[]);
-    
-    
-        const {name, avatar_url, location, bio, blog,company, login, html_url, followers, following, public_repos, public_gists, hireable}=User;
-       
+        const {name, avatar_url, location, bio, blog,company, login, html_url, followers, following, public_repos, public_gists, hireable}=User; 
         return (
-            <div >
+            <div className="personal-page">
                 <div className="userFragment">
-                    <Link to="/" className="homepageButton">Back to homepage</Link>
+                    <Link to="/" className="homepageButton">Back</Link>
                    Hireable:{''}
-                   {hireable? (<i calssName="fas fa-check text-success"/> ):(<i className="fas fa-times-circle text-danger" />)}
+                   {hireable? (<i calssName="fas fa-check text-success"/>) :(<i className="fas fa-times-circle text-danger" />)}
                 </div>
              
               <div className="card grid-2">
                   <div>
-                  <img src={avatar_url}className="personal_image"alt="" style={{width:"150px"}}/>
+                  <img src={avatar_url}className="personal_image2"alt=""/>
                   <h3>{name}</h3>
                   <p>Location:{location}</p>
                   </div>
@@ -31,7 +29,7 @@ const User=({User,loading,getUser,getRepos, repos,match})=>{
                          <h3>Bio</h3>
                          <p>{bio}</p>
                          </Fragment>)}
-                 <a href={html_url} className="btn">Github Profile</a>
+                 <a href={html_url} className="btn">Profile</a>
                  <ul className="information">
                      <li>
                          {login &&(<Fragment>userName:{login}</Fragment>) }
@@ -59,8 +57,7 @@ const User=({User,loading,getUser,getRepos, repos,match})=>{
 }
 User.propTypes={
     loading: PropTypes.bool,
-    User:PropTypes.object.isRequired,
-    getUser:PropTypes.func.isRequired,
+  
     
 };
 export default User

@@ -7,8 +7,8 @@ const Navbar =(props)=>{
         return (
             <nav className="navbar bg-primary">
                 
-               <h1><i className={props.icon}></i>{props.title} </h1> 
-               <ul>
+               <h1><i className={props.icon}></i><span className="title">{props.title}</span></h1> 
+               <ul className="narbar-R">
                    <li><Link to="/" className="navbar-right" >Home</Link></li>
                    <li><Link to="/about" className="navbar-right" >About</Link></li>
                </ul>

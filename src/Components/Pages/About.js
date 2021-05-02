@@ -3,10 +3,11 @@ import React from 'react'
  const About = () => {
     return (
         <div className="content">
-            <h1>
+            <p>
             About This App
-            </h1>
+            </p>
             <p>App used to search github profile</p>
+            <p>Created by Xiaohua Cai on April 14 2021</p>
         </div>
     )
 }

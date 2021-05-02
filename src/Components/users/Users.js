@@ -1,23 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import UserItem from './UserItem'
 import Spinner from '../layOut/Spinner'
+import GithubContext from "../../context/github/githubContext"
 
-const Users=({users, loading})=>{
+const Users=()=>{
+    const githubContext =useContext(GithubContext);
+    const {loading, users}=githubContext;
     if(loading){
         return<Spinner/>
     } else{
         return (
-            <div style={styles}>
-                {users.map((user)=>{ return <UserItem key={user.id} user={user}/>})
-                }
+            <div className="container">
+                <div className="Users_grid">
+                    {users.map((user)=>{ return <UserItem key={user.id} user={user}/>})}   
+                </div>
             </div>
+            
         )
     }    
             }
 
-const styles={
-    display:'grid',
-    gridTemplateColumns:'repeat(auto-fit,minmax(200px, 1fr))',
-    gridGap:'0.8rem'
-}
 export default Users

@@ -1,42 +1,37 @@
-import React, {useState} from 'react'
- import propTypes from "prop-types";
-const Search=({searchUsers,showClear,clearUsers, setAlert})=>{
+import React, {useState,useContext} from 'react';
+import GithubContext from "../../context/github/githubContext";
+import AlertContext from "../../context/alert/alertContext";
+const Search=()=>{
+    const githubContext=useContext(GithubContext);
+    const alertContext=useContext(AlertContext);
     const [text, setText]=useState('');
-    
  const   onSubmit=e=> {
         e.preventDefault();
         if(text===''){
-            setAlert('Please enter userName','light');
+            alertContext.setAlert('Please enter userName','light');
         } else{
             
-               searchUsers(text);
-            setText("");
-    
-        }
-       
+               githubContext.searchUsers(text);
+            setText("");  
+        } 
     }
 
   const  onChange=e=>{
         setText(e.target.value)
     }
-  
         return (
-            <div>
-                <h2>Profile Finder for Github</h2>
-                <h5>Check out profile by entering a username!!!</h5>
-                <form className="form" onSubmit={onSubmit}>
-                    <input type="text" placeholder="Search Users" name="text" size="30" value={text} onChange={onChange}/>
-                     <input type="submit" className='submit' value="Search"/> 
-                     {showClear&&<button className="btn_clear" onClick={clearUsers}>Clear</button>}
-               </form>
-            </div>
+                <div className="center">
+                    <h2>Profile Finder for Github</h2>
+                    <h5>Check out profile by entering a username!!!</h5>
+                    <form className="form" onSubmit={onSubmit}>
+                         <input type="text" className="searchInput" placeholder="Search Users" name="text" size="30" value={text} onChange={onChange}/>
+                         <input type="submit" className='submit' value="Search"/> 
+                     {githubContext.users.length>0 &&<button className="btn_clear" onClick={githubContext.clearUsers}>Clear</button>}
+                    </form>
+                </div>
+                    
         )
     
 }
-Search. propTypes={
-    searchUsers:propTypes.func.isRequired,
-    clearUsers: propTypes.func.isRequired,
-    showClear:propTypes.bool.isRequired,
-    setAlert:propTypes.func.isRequired
- };
+
 export default Search
