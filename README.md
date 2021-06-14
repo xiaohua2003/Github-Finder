@@ -7,9 +7,9 @@
 
 https://nifty-lichterman-b24cc3.netlify.app/
 
-# UI demo
 
 ![screencapture-localhost-3000-2021-06-13-22_36_30](https://user-images.githubusercontent.com/72715756/121839816-2010cf80-cc98-11eb-82f6-db2d874ab3ca.png)
+![screencapture-localhost-3000-2021-06-13-22_37_20](https://user-images.githubusercontent.com/72715756/121839965-682ff200-cc98-11eb-99a6-10e93f75c903.png)
 
 
 
