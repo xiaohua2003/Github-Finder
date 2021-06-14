@@ -9,5 +9,5 @@ https://nifty-lichterman-b24cc3.netlify.app/
 
 # To start the app
 
--npm install
--npm run start
+- npm install
+- npm run start
